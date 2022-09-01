@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/index.css'%}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
         <img src="{% static 'images/android-chrome-512x512.png' %}" alt="" width="56" height="56" class="align-text-center">
@@ -33,6 +34,55 @@
       </div>
     </div>
   </nav>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.name|as_crispy_field }} 
+    {{ form.about_me|as_crispy_field }}  
+    {{ form.work_status|as_crispy_field }}
+    {{ form.work_status_link|as_crispy_field }}
+    {{ form.system|as_crispy_field }}
+    <input type="submit" value="Genrate File">
+  </form>
+<!-- footer -->
+  <footer class="w-100 py-4 flex-shrink-0 bg-dark">
+    <div class="container py-4">
+        <div class="row gy-4 gx-5">
+            <div class="col-lg-4 col-md-6">
+                <img id="logo_img" src="{% static 'images/android-chrome-512x512.png' %}" alt="" width="235" height="235">
+                <br>
+                <strong class="foot text-white">Github Readme Creator</strong>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Quick links</h5>
+                <ul class="list-unstyled text-muted">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Get started</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Quick links</h5>
+                <ul class="list-unstyled text-muted">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Get started</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Newsletter</h5>
+                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <form action="#">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
