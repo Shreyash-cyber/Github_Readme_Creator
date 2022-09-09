@@ -13,6 +13,7 @@ class Personal_Readme_form(forms.ModelForm):
             'work_status':'Your Current work status',
             'resume_link':'Your Resume',
             'work_status':'Your current status',
+            'work_status_link':'',
             'system':'I prefer working on',
             'programming_language':'Programming Languages',
             'frontend_language':'Frontend Languages',
@@ -57,21 +58,21 @@ class Personal_Readme_form(forms.ModelForm):
             'buy_me_coffee':'Buy me coffee'
         }
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Type your name','id':'name'}),
-            'about_me': forms.Textarea(attrs={'placeholder': 'A short summary about yourself'}),
-
+            'name': forms.TextInput(attrs={'placeholder': 'Type your name','id':'name','font-size':'50px'}),
+            'about_me': forms.TextInput(attrs={'placeholder': 'A short summary about yourself'}),
+            'resume_link': forms.TextInput(attrs={'placeholder':'Link of your Resume'}),
             'project1': forms.TextInput(attrs={'placeholder':'Name of your project'}),
-    
+            'project1_link': forms.TextInput(attrs={'placeholder':'link of your project/repo'}),
             'project2': forms.TextInput(attrs={'placeholder':'Name of your project'}),
-    
+            'project2_link': forms.TextInput(attrs={'placeholder':'link of your project/github repo'}),
             'project3': forms.TextInput(attrs={'placeholder':'Name of your project'}),
-    
+            'project3_link': forms.TextInput(attrs={'placeholder':'link of your project/github repo'}),
             'project4': forms.TextInput(attrs={'placeholder':'Name of your project'}),
-    
+            'project4_link': forms.TextInput(attrs={'placeholder':'link of your project/github repo'}),
             'project5': forms.TextInput(attrs={'placeholder':'Name of your project'}),
-    
+            'project5_link': forms.TextInput(attrs={'placeholder':'link of your project/github repo'}),
             'work_status' : forms.TextInput(attrs={'placeholder': 'Your current status'}),
-
+            'work_status_link' : forms.TextInput(attrs={'placeholder': 'Your current organization link if any'}),
             'system' : forms.CheckboxSelectMultiple(attrs={'id':'system'}),
             'programming_language' : forms.CheckboxSelectMultiple(attrs={'id':'programming_language'}),
             'frontend_language' : forms.CheckboxSelectMultiple(attrs={'id':'frontend_language'}),
@@ -90,5 +91,6 @@ class Personal_Readme_form(forms.ModelForm):
             'automation' : forms.CheckboxSelectMultiple(attrs={'id':'automation'}),
             'blockchain' : forms.CheckboxSelectMultiple(attrs={'id':'blockchain'}),
             'others' : forms.CheckboxSelectMultiple(attrs={'id':'others'}),
-            'add_ons':forms.CheckboxSelectMultiple(attrs={'id':'add_ons'}),            
+            'add_ons':forms.CheckboxSelectMultiple(attrs={'id':'add_ons'}),  
+
         }

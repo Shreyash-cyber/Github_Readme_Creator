@@ -34,60 +34,115 @@
       </div>
     </div>
   </nav>
-  <div class="text-white form">
+  <div class="form text-white">
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.name|as_crispy_field }}
-    {{ form.about_me|as_crispy_field }} 
-    {{ form.resume_link|as_crispy_field }} 
-    {{ form.project1|as_crispy_field }}{{ form.project1_link|as_crispy_field }}
-    {{ form.project2|as_crispy_field }}{{ form.project2_link|as_crispy_field }}
-    {{ form.project3|as_crispy_field }}{{ form.project3_link|as_crispy_field }}
-    {{ form.project4|as_crispy_field }}{{ form.project4_link|as_crispy_field }}
-    {{ form.project5|as_crispy_field }}{{ form.project5_link|as_crispy_field }}
-    {{ form.work_status|as_crispy_field }}
-    {{ form.work_status_link|as_crispy_field }}
-    {{ form.system|as_crispy_field }}
-    {{ form.programming_language|as_crispy_field }}
-    {{ form.frontend_language|as_crispy_field }}
-    {{ form.backend_language|as_crispy_field }}
-    {{ form.mobile_app_devlopment|as_crispy_field }}
-    {{ form.aI_ML|as_crispy_field }}
-    {{ form.database|as_crispy_field }}
-    {{ form.data_visualization|as_crispy_field }}
-    {{ form.devops|as_crispy_field }}
-    {{ form.bASS|as_crispy_field }}
-    {{ form.framework|as_crispy_field }}
-    {{ form.testing|as_crispy_field }}
-    {{ form.software|as_crispy_field }}
-    {{ form.static_site_gen|as_crispy_field }}
-    {{ form.game_engine|as_crispy_field }}
-    {{ form.automation|as_crispy_field }}
-    {{ form.blockchain|as_crispy_field }}
-    {{ form.others|as_crispy_field }}
-    {{ form.github|as_crispy_field }}
-    {{ form.twitter|as_crispy_field }}
-    {{ form.codepen|as_crispy_field }}
-    {{ form.dev|as_crispy_field }}
-    {{ form.codesandbox|as_crispy_field }}
-    {{ form.linkedin|as_crispy_field }}
-    {{ form.kaggle|as_crispy_field }}
-    {{ form.facebook|as_crispy_field }}
-    {{ form.instagram|as_crispy_field }}
-    {{ form.dribble|as_crispy_field }}
-    {{ form.behance|as_crispy_field }}
-    {{ form.hashnode|as_crispy_field }}
-    {{ form.medium|as_crispy_field }}
-    {{ form.youtube|as_crispy_field }}
-    {{ form.codechef|as_crispy_field }}
-    {{ form.hackerank|as_crispy_field }}
-    {{ form.gfg|as_crispy_field }}
-    {{ form.discord|as_crispy_field }}
-    {{ form.rss|as_crispy_field }}
-    {{ form.add_ons|as_crispy_field }}
-    {{ form.buy_me_coffee|as_crispy_field }}
-
-    <input type="submit" value="Genrate File">
+    <div>
+      {{ form.name.label_tag }} <span>{{ form.name }}</span>
+  </div>
+  <div>
+    {{ form.about_me.label_tag }} <span>{{ form.about_me }} </span> 
+  </div>
+    <hr>
+    <h3>Work</h3>
+    {{ form.resume_link.label_tag }} <span>{{ form.resume_link}} </span>
+    <br>
+    {{ form.work_status.label_tag }} <span>{{ form.work_status}}</span> <span>{{ form.work_status_link}}</span>
+<br>
+    {{ form.project1}}{{ form.project1_link}}
+    <br>
+    {{ form.project2}}{{ form.project2_link}}
+    <br>
+    {{ form.project3}}{{ form.project3_link}}
+    <br>
+    {{ form.project4}}{{ form.project4_link}}
+    <br>
+    {{ form.project5}}{{ form.project5_link}}
+    <hr>
+    <h3>Skills / Technology</h3>
+    <p>{{ form.system.label_tag }} 
+    </p> {{ form.system}}
+    <hr>
+    <p>{{ form.programming_language.label_tag }} 
+    </p> {{ form.programming_language}}
+    <hr>
+    <p>{{ form.frontend_language.label_tag }} 
+    </p> {{ form.frontend_language}}
+    <hr>
+    <p>{{ form.backend_language.label_tag }} 
+    </p> {{ form.backend_language}}
+    <hr>
+    <p>{{ form.mobile_app_devlopment.label_tag }} 
+    </p> {{ form.mobile_app_devlopment}}
+    <hr>
+    <p>{{ form.aI_ML.label_tag }} 
+    </p> {{ form.aI_ML}}
+    <hr>
+    <p>{{ form.database.label_tag }} 
+    </p> {{ form.database}}
+    <hr>
+    <p>{{ form.data_visualization.label_tag }} 
+    </p> {{ form.data_visualization}}
+    <hr>
+    <p>{{ form.devops.label_tag }} 
+    </p> {{ form.devops}}
+    <hr>
+    <p>{{ form.bASS.label_tag }} 
+    </p> {{ form.bASS}}
+    <hr>
+    <p>{{ form.framework.label_tag }} 
+    </p> {{ form.framework}}
+    <hr>
+    <p>{{ form.testing.label_tag }} 
+    </p> {{ form.testing}}
+    <hr>
+    <p>{{ form.software.label_tag }} 
+    </p> {{ form.software}} 
+    <hr>
+    <p>{{ form.static_site_gen.label_tag }} 
+    </p> {{ form.static_site_gen}}
+    <hr>
+    <p>{{ form.game_engine.label_tag }} 
+    </p> {{ form.game_engine}}
+    <hr>
+    <p>{{ form.automation.label_tag }} 
+    </p> {{ form.automation}}
+    <hr>
+    <p>{{ form.blockchain.label_tag }} 
+    </p> {{ form.blockchain}}
+    <hr>
+    <p>{{ form.others.label_tag }} 
+    </p> {{ form.others}}
+    <hr>
+    <h3>Social</h3>
+    {{ form.github.label_tag }} {{ form.github}}
+    {{ form.twitter.label_tag }} {{ form.twitter}}
+    {{ form.codepen.label_tag }} {{ form.codepen}}
+    {{ form.dev.label_tag }} {{ form.dev}}
+    {{ form.codesandbox.label_tag }} {{ form.codesandbox}}
+    {{ form.linkedin.label_tag }} {{ form.linkedin}}
+    {{ form.kaggle.label_tag }} {{ form.kaggle}}
+    {{ form.facebook.label_tag }} {{ form.facebook}}
+    {{ form.instagram.label_tag }} {{ form.instagram}}
+    {{ form.dribble.label_tag }} {{ form.dribble}}
+    {{ form.behance.label_tag }} {{ form.behance}}
+    {{ form.hashnode.label_tag }} {{ form.hashnode}}
+    {{ form.medium.label_tag }} {{ form.medium}}
+    {{ form.youtube.label_tag }} {{ form.youtube}}
+    {{ form.codechef.label_tag }} {{ form.codechef}}
+    {{ form.hackerank.label_tag }} {{ form.hackerank}}
+    {{ form.gfg.label_tag }} {{ form.gfg}}
+    {{ form.discord.label_tag }} {{ form.discord}}
+    {{ form.rss.label_tag }} {{ form.rss}}
+    <hr>
+    <h3>Add On</h3>
+    {{ form.add_ons}}
+    <hr>
+    <h3>Support</h3>
+    {{ form.buy_me_coffee}}
+    <hr>
+    <div class="genrate">
+    <input type="submit" class="gen_btn"  value="Genrate File"></div>
   </form>
 </div>
 <!-- footer -->

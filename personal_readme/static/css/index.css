@@ -15,25 +15,66 @@ body{
 .navbar{
     background-color: #212529;
 }
+.btn{
+    margin-left: 5px;
+    margin-right: 5px;
+}
  
 /* form styling */
-
-#programming_language{
-    height: 80px;
-    width: 80px;
-    cursor: pointer;
-    text-align: center;
-}
-.prog_lang{
-    cursor: pointer;
-}
 .form{
     margin-left: 50px;
     margin-right: 50px;
 }
-.btn{
-    margin-left: 5px;
-    margin-right: 5px;
+input[type="text"]{
+    width: 500px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+input[type="checkbox"]{
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+}
+input[type="url"]{
+    width: 450px;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+hr{
+    height: 5px;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+}
+.hide_name{
+    display: visible;
+}
+#programming_language{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    display: inline-block;
+}
+.prog_lang{
+    cursor: pointer;
+}
+.genrate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gen_btn{
+    font-size: 25px;
+    width: 150px;
+    height: 50px;
 }
 
 /* footer styling */
