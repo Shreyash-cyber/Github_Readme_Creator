@@ -1,7 +1,10 @@
+from random import choices
+from secrets import choice
 from django.core.checks import messages
 from django.db import models
 from django.core.validators import RegexValidator
 from multiselectfield import MultiSelectField
+from django.utils.html import format_html
 from django.utils import timezone
 # Create your models here.
 
@@ -10,93 +13,151 @@ class SystemChoice (models.Model):
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px'/>")
+
 class Programming_language (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"<img src='{self.img_link}' width='50px' class='prog_lang' />")
 
 class Frontend_language (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Backend_language (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Mobile_app_devlopment (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class AI_ML (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Database (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Data_visualization (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Devops (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class BASS (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Framework (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Testing (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Software (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Static_site_gen (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Game_engine (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Automation (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
+
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Blockchain (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
+
 class Others (models.Model):
     name = models.CharField(max_length=200)
     img_link = models.URLField(blank=False)
     link = models.URLField(blank=False)
 
+    def __str__(self):
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")
 
 class Personal_readme(models.Model):
+    add_on = [ 
+        ('display visitors count badge', 'display visitors count badge'),
+        ('display top skills', 'display top skills'),
+        ('display github profile stats card','display github profile stats card')
+    ]
     Link_Regex = RegexValidator(regex = "((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)")
     name = models.CharField(max_length=70, blank=False)
     about_me = models.CharField(max_length=1000, blank=True)
@@ -153,8 +214,8 @@ class Personal_readme(models.Model):
     gfg = models.URLField(validators = [Link_Regex], blank=True)
     discord = models.URLField(validators = [Link_Regex], blank=True)
     rss = models.URLField(validators = [Link_Regex], blank=True)
-    github = models.URLField(validators = [Link_Regex], blank=True)
+    add_ons = MultiSelectField(choices = add_on, blank=True, max_length=300,)
     buy_me_coffee = models.URLField(validators = [Link_Regex], blank=True)
 
     def __str__(self):
-        return self.name
+        return format_html(f"{self.name}<img src='{self.img_link}' width='50px' />")

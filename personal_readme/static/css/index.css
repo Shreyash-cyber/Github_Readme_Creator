@@ -6,16 +6,38 @@
     font-family: 'Oswald', sans-serif;
     text-decoration: none;
 }
+body{
+    background-color: #212529;
+}
+
+/* navbar styling */
+
 .navbar{
     background-color: #212529;
+}
+ 
+/* form styling */
+
+#programming_language{
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+}
+.prog_lang{
+    cursor: pointer;
+}
+.form{
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .btn{
     margin-left: 5px;
     margin-right: 5px;
 }
-footer{
-    margin-top: 50px;
-}
+
+/* footer styling */
+
 #logo_img{
     animation: bounce 2s infinite ease-in alternate;
 }
@@ -24,7 +46,7 @@ footer{
         transform:translateY(0px)
     }
     100%{
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
 }
 .foot{

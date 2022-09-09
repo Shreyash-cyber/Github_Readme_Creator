@@ -34,21 +34,68 @@
       </div>
     </div>
   </nav>
+  <div class="text-white form">
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.name|as_crispy_field }} 
-    {{ form.about_me|as_crispy_field }}  
+    {{ form.name|as_crispy_field }}
+    {{ form.about_me|as_crispy_field }} 
+    {{ form.resume_link|as_crispy_field }} 
+    {{ form.project1|as_crispy_field }}{{ form.project1_link|as_crispy_field }}
+    {{ form.project2|as_crispy_field }}{{ form.project2_link|as_crispy_field }}
+    {{ form.project3|as_crispy_field }}{{ form.project3_link|as_crispy_field }}
+    {{ form.project4|as_crispy_field }}{{ form.project4_link|as_crispy_field }}
+    {{ form.project5|as_crispy_field }}{{ form.project5_link|as_crispy_field }}
     {{ form.work_status|as_crispy_field }}
     {{ form.work_status_link|as_crispy_field }}
     {{ form.system|as_crispy_field }}
+    {{ form.programming_language|as_crispy_field }}
+    {{ form.frontend_language|as_crispy_field }}
+    {{ form.backend_language|as_crispy_field }}
+    {{ form.mobile_app_devlopment|as_crispy_field }}
+    {{ form.aI_ML|as_crispy_field }}
+    {{ form.database|as_crispy_field }}
+    {{ form.data_visualization|as_crispy_field }}
+    {{ form.devops|as_crispy_field }}
+    {{ form.bASS|as_crispy_field }}
+    {{ form.framework|as_crispy_field }}
+    {{ form.testing|as_crispy_field }}
+    {{ form.software|as_crispy_field }}
+    {{ form.static_site_gen|as_crispy_field }}
+    {{ form.game_engine|as_crispy_field }}
+    {{ form.automation|as_crispy_field }}
+    {{ form.blockchain|as_crispy_field }}
+    {{ form.others|as_crispy_field }}
+    {{ form.github|as_crispy_field }}
+    {{ form.twitter|as_crispy_field }}
+    {{ form.codepen|as_crispy_field }}
+    {{ form.dev|as_crispy_field }}
+    {{ form.codesandbox|as_crispy_field }}
+    {{ form.linkedin|as_crispy_field }}
+    {{ form.kaggle|as_crispy_field }}
+    {{ form.facebook|as_crispy_field }}
+    {{ form.instagram|as_crispy_field }}
+    {{ form.dribble|as_crispy_field }}
+    {{ form.behance|as_crispy_field }}
+    {{ form.hashnode|as_crispy_field }}
+    {{ form.medium|as_crispy_field }}
+    {{ form.youtube|as_crispy_field }}
+    {{ form.codechef|as_crispy_field }}
+    {{ form.hackerank|as_crispy_field }}
+    {{ form.gfg|as_crispy_field }}
+    {{ form.discord|as_crispy_field }}
+    {{ form.rss|as_crispy_field }}
+    {{ form.add_ons|as_crispy_field }}
+    {{ form.buy_me_coffee|as_crispy_field }}
+
     <input type="submit" value="Genrate File">
   </form>
+</div>
 <!-- footer -->
   <footer class="w-100 py-4 flex-shrink-0 bg-dark">
     <div class="container py-4">
         <div class="row gy-4 gx-5">
             <div class="col-lg-4 col-md-6">
-                <img id="logo_img" src="{% static 'images/android-chrome-512x512.png' %}" alt="" width="150" height="150">
+                <img id="logo_img" src="{% static 'images/android-chrome-512x512.png' %}" alt="" width="200" height="150">
                 <br>
                 <strong class="foot text-white">Github Readme Creator</strong>
             </div>
@@ -73,9 +120,9 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-white mb-3">Support</h5>
                 <ul class="list-unstyled text-muted">
-                  <li><a href="#" style="text-decoration: none;" class="text-white"><i class="fa-brands fa-github fa-fade"></i>   Github Follow</a></li>
-                  <li><a href="#" style="text-decoration: none;" class="text-white"><i class="fa-brands fa-youtube fa-fade"></i>  Youtube Subscribe</a></li>
-                  <li><a href="#" style="text-decoration: none;" class="text-white"> <i class="fa-brands fa-discord fa-fade"></i> Discord Join</a></li>
+                  <li><a href="#" style="text-decoration: none;" class="text-white"><i class="fa-brands fa-github fa-fade"></i>   Github</a></li>
+                  <li><a href="#" style="text-decoration: none;" class="text-white"><i class="fa-brands fa-youtube fa-fade"></i>  Youtube</a></li>
+                  <li><a href="#" style="text-decoration: none;" class="text-white"> <i class="fa-brands fa-discord fa-fade"></i> Discord</a></li>
                   <li><a href="#" style="text-decoration: none;" class="text-white"><i class="fa-solid fa-mug-hot fa-fade"></i>   Buy Me Coffee</a></li>
             </div>
         </div>
