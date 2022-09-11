@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github Readme Creator</title>
-    <!-- CSS only -->
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-      <!-- font awesome free cdn kit -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- iconify cdn -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <!-- css -->
     <link rel="stylesheet" href="{% static 'css/index.css'%}">
+
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
@@ -28,8 +28,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto">
-        <a href="https://github.com/Shreyash-cyber/Github_Readme_Creator" class="btn btn-outline-secondary text-white" role="button" target="_blank"><i class="fa-solid fa-code-fork fa-beat"></i> Fork This Project</a>
-        <a href="https://github.com/Shreyash-cyber/Github_Readme_Creator" class="btn btn-outline-secondary text-white" role="button" target="_blank"> <i class="fa-solid fa-star fa-beat"></i> Star This Project</a>
+        <a href="https://github.com/Shreyash-cyber/Github_Readme_Creator/fork" class="btn btn-outline-secondary text-white" role="button" target="_blank"><iconify-icon icon="eos-icons:fork"></iconify-icon> Fork This Project</a>
+        <a href="https://github.com/Shreyash-cyber/Github_Readme_Creator" class="btn btn-outline-secondary text-white" role="button" target="_blank"><iconify-icon icon="ant-design:star-filled"></iconify-icon> Star This Project</a>
         </div>
       </div>
     </div>
@@ -38,16 +38,16 @@
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="name_tag">
-      <h2><i class="fa-solid fa-user"></i> ( Title )</h2>
+      <h2><iconify-icon icon="bi:person-circle"></iconify-icon> ( Title )</h2>
       {{ form.name.label_tag }} <span>{{ form.name }}</span>
   </div>
   <div class="about_tag">
-    <h2><i class="fa-solid fa-closed-captioning"></i> ( Subtitle )</h2>
+    <h2><iconify-icon icon="fluent:subtitles-16-filled"></iconify-icon> ( Subtitle )</h2>
     {{ form.about_me.label_tag }} <span>{{ form.about_me }} </span> 
   </div>
     <hr>
     <div class="work_tag">
-    <h2><i class="fa-solid fa-briefcase"></i> ( Work )</h2>
+    <h2><iconify-icon icon="ic:baseline-work"></iconify-icon> ( Work )</h2>
     {{ form.resume_link.label_tag }} <span>{{ form.resume_link}} </span>
     <br>
      {{ form.email_id.label_tag }}<span>{{ form.email_id }}</span>
@@ -65,90 +65,109 @@
     {{ form.project5.label_tag}}{{ form.project5}}{{ form.project5_link}}
   </div>
     <hr>
-    <h2><i class="fa-solid fa-laptop"></i> ( Skills / Technology )</h2>
-    <p>{{ form.system.label_tag }} 
-    </p> {{ form.system}}
+    <div class="skill_tag">
+    <h2><iconify-icon icon="entypo:laptop"></iconify-icon> ( Skills / Technology )</h2>    
+      {{ form.system.label_tag }} 
+      {{ form.system}}
+    <hr>   
+      {{ form.programming_language.label_tag }} 
+      {{ form.programming_language}}
+    <hr>    
+      {{ form.frontend_language.label_tag }} 
+      {{ form.frontend_language}}
     <hr>
-    <p>{{ form.programming_language.label_tag }} 
-    </p> {{ form.programming_language}}
+      {{ form.backend_language.label_tag }} 
+      {{ form.backend_language}}
     <hr>
-    <p>{{ form.frontend_language.label_tag }} 
-    </p> {{ form.frontend_language}}
+      {{ form.mobile_app_devlopment.label_tag }} 
+      {{ form.mobile_app_devlopment}}
     <hr>
-    <p>{{ form.backend_language.label_tag }} 
-    </p> {{ form.backend_language}}
+    {{ form.aI_ML.label_tag }} 
+      {{ form.aI_ML}}
     <hr>
-    <p>{{ form.mobile_app_devlopment.label_tag }} 
-    </p> {{ form.mobile_app_devlopment}}
+    {{ form.database.label_tag }} 
+      {{ form.database}}
     <hr>
-    <p>{{ form.aI_ML.label_tag }} 
-    </p> {{ form.aI_ML}}
+    {{ form.data_visualization.label_tag }} 
+      {{ form.data_visualization}}
     <hr>
-    <p>{{ form.database.label_tag }} 
-    </p> {{ form.database}}
+    {{ form.devops.label_tag }} 
+      {{ form.devops}}
     <hr>
-    <p>{{ form.data_visualization.label_tag }} 
-    </p> {{ form.data_visualization}}
+    {{ form.bASS.label_tag }} 
+      {{ form.bASS}}
     <hr>
-    <p>{{ form.devops.label_tag }} 
-    </p> {{ form.devops}}
+    {{ form.framework.label_tag }} 
+      {{ form.framework}}
     <hr>
-    <p>{{ form.bASS.label_tag }} 
-    </p> {{ form.bASS}}
+    {{ form.testing.label_tag }} 
+      {{ form.testing}}
     <hr>
-    <p>{{ form.framework.label_tag }} 
-    </p> {{ form.framework}}
+    {{ form.software.label_tag }} 
+      {{ form.software}} 
     <hr>
-    <p>{{ form.testing.label_tag }} 
-    </p> {{ form.testing}}
+    {{ form.static_site_gen.label_tag }} 
+      {{ form.static_site_gen}}
     <hr>
-    <p>{{ form.software.label_tag }} 
-    </p> {{ form.software}} 
+    {{ form.game_engine.label_tag }} 
+      {{ form.game_engine}}
     <hr>
-    <p>{{ form.static_site_gen.label_tag }} 
-    </p> {{ form.static_site_gen}}
+    {{ form.automation.label_tag }} 
+      {{ form.automation}}
     <hr>
-    <p>{{ form.game_engine.label_tag }} 
-    </p> {{ form.game_engine}}
+    {{ form.blockchain.label_tag }} 
+      {{ form.blockchain}}
     <hr>
-    <p>{{ form.automation.label_tag }} 
-    </p> {{ form.automation}}
+    {{ form.others.label_tag }} 
+      {{ form.others}}
+    </div>
     <hr>
-    <p>{{ form.blockchain.label_tag }} 
-    </p> {{ form.blockchain}}
+    <div class="social_tag">
+    <h2><iconify-icon icon="akar-icons:hashtag"></iconify-icon> ( Social )</h2>
+
+    <iconify-icon icon="akar-icons:github-fill"></iconify-icon> {{ form.github.label_tag }} {{ form.github}}
+    <iconify-icon icon="akar-icons:twitter-fill"></iconify-icon> {{ form.twitter.label_tag }} {{ form.twitter}} 
+    <br>
+    <iconify-icon icon="akar-icons:codepen-fill"></iconify-icon> {{ form.codepen.label_tag }} {{ form.codepen}}
+    <iconify-icon icon="fa-brands:dev"></iconify-icon> {{ form.dev.label_tag }} {{ form.dev}} 
+    <br>
+    <iconify-icon icon="akar-icons:linkedin-box-fill"></iconify-icon> {{ form.linkedin.label_tag }} {{ form.linkedin}} 
+    <iconify-icon icon="cib:kaggle"></iconify-icon> {{ form.kaggle.label_tag }} {{ form.kaggle}}
+     <br>
+     <iconify-icon icon="akar-icons:facebook-fill"></iconify-icon> {{ form.facebook.label_tag }} {{ form.facebook}}
+     <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon> {{ form.instagram.label_tag }} {{ form.instagram}} 
+     <br>
+     <iconify-icon icon="icon-park-outline:dribble"></iconify-icon> {{ form.dribble.label_tag }} {{ form.dribble}}
+     <iconify-icon icon="akar-icons:behance-fill"></iconify-icon> {{ form.behance.label_tag }} {{ form.behance}} 
+     <br>
+     <iconify-icon icon="cib:hashnode"></iconify-icon> {{ form.hashnode.label_tag }} {{ form.hashnode}}
+     <iconify-icon icon="bi:medium"></iconify-icon> {{ form.medium.label_tag }} {{ form.medium}} 
+     <br>
+     <iconify-icon icon="akar-icons:youtube-fill"></iconify-icon> {{ form.youtube.label_tag }} {{ form.youtube}} 
+     <iconify-icon icon="cib:hackerrank"></iconify-icon> {{ form.hackerank.label_tag }} {{ form.hackerank}}
+     <br>
+    <iconify-icon icon="simple-icons:topcoder"></iconify-icon> {{ form.topcoder.label_tag }} {{ form.topcoder}} 
+    <iconify-icon icon="cib:leetcode"></iconify-icon> {{ form.leetcode.label_tag }} {{ form.leetcode}} 
+    <br>
+    <iconify-icon icon="simple-icons:hackerearth"></iconify-icon> {{ form.hackerearth.label_tag }} {{ form.hackerearth}} 
+    <iconify-icon icon="akar-icons:discord-fill"></iconify-icon> {{ form.discord.label_tag }} {{ form.discord}}
+     <br>
+     <iconify-icon icon="entypo:rss"></iconify-icon> {{ form.rss.label_tag }} {{ form.rss}} 
+  </div>
     <hr>
-    <p>{{ form.others.label_tag }} 
-    </p> {{ form.others}}
-    <hr>
-    <h2><i class="fa-solid fa-hashtag"></i> ( Social )</h2>
-    {{ form.github.label_tag }} {{ form.github}}
-    {{ form.twitter.label_tag }} {{ form.twitter}}
-    {{ form.codepen.label_tag }} {{ form.codepen}}
-    {{ form.dev.label_tag }} {{ form.dev}}
-    {{ form.codesandbox.label_tag }} {{ form.codesandbox}}
-    {{ form.linkedin.label_tag }} {{ form.linkedin}}
-    {{ form.kaggle.label_tag }} {{ form.kaggle}}
-    {{ form.facebook.label_tag }} {{ form.facebook}}
-    {{ form.instagram.label_tag }} {{ form.instagram}}
-    {{ form.dribble.label_tag }} {{ form.dribble}}
-    {{ form.behance.label_tag }} {{ form.behance}}
-    {{ form.hashnode.label_tag }} {{ form.hashnode}}
-    {{ form.medium.label_tag }} {{ form.medium}}
-    {{ form.youtube.label_tag }} {{ form.youtube}}
-    {{ form.codechef.label_tag }} {{ form.codechef}}
-    {{ form.hackerank.label_tag }} {{ form.hackerank}}
-    {{ form.gfg.label_tag }} {{ form.gfg}}
-    {{ form.discord.label_tag }} {{ form.discord}}
-    {{ form.rss.label_tag }} {{ form.rss}}
-    <hr>
-    <h2><i class="fa-solid fa-square-plus"></i> ( Add On )</h2>
+    <div class="add_tag">
+    <h2><iconify-icon icon="bxs:message-alt-add"></iconify-icon> ( Add On )</h2>
     {{ form.add_ons}}
+  </div>
     <hr>
-    <h2><i class="fa-solid fa-handshake"></i> ( Support )</h2>
-    {{ form.buy_me_coffee}}
+    <div class="support_tag">
+    <h2><iconify-icon icon="fa-solid:handshake"></iconify-icon> ( Support )</h2>
+    <iconify-icon icon="line-md:buy-me-a-coffee-filled"></iconify-icon> {{ form.buy_me_coffee.label_tag}} {{ form.buy_me_coffee}}
+    <iconify-icon icon="simple-icons:patreon"></iconify-icon> {{ form.patreon.label_tag}} {{ form.patreon}}
+  </div>
     <hr>
-    <div class="genrate">
-    <input type="submit" class="gen_btn"  value="Genrate File"></div>
+    <div class="genrate text-center">
+      <button type="button" class="gen_btn"><iconify-icon icon="bxs:file-md"></iconify-icon> Genrate File</button></div>
   </form>
 </div>
 <!-- footer -->

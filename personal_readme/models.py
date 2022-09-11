@@ -14,7 +14,7 @@ class SystemChoice (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px'/><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px'/><span id='hide_name' >{self.name}</span>")
 
 class Programming_language (models.Model):
     name = models.CharField(max_length=200)
@@ -22,7 +22,7 @@ class Programming_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' class='prog_lang' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' class='prog_lang' /><span id='hide_name' >{self.name}</span>")
 
 class Frontend_language (models.Model):
     name = models.CharField(max_length=200)
@@ -30,7 +30,7 @@ class Frontend_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Backend_language (models.Model):
     name = models.CharField(max_length=200)
@@ -38,7 +38,7 @@ class Backend_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Mobile_app_devlopment (models.Model):
     name = models.CharField(max_length=200)
@@ -46,7 +46,7 @@ class Mobile_app_devlopment (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class AI_ML (models.Model):
     name = models.CharField(max_length=200)
@@ -54,7 +54,7 @@ class AI_ML (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Database (models.Model):
     name = models.CharField(max_length=200)
@@ -62,7 +62,7 @@ class Database (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Data_visualization (models.Model):
     name = models.CharField(max_length=200)
@@ -70,7 +70,7 @@ class Data_visualization (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Devops (models.Model):
     name = models.CharField(max_length=200)
@@ -78,7 +78,7 @@ class Devops (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class BASS (models.Model):
     name = models.CharField(max_length=200)
@@ -86,7 +86,7 @@ class BASS (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Framework (models.Model):
     name = models.CharField(max_length=200)
@@ -94,7 +94,7 @@ class Framework (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Testing (models.Model):
     name = models.CharField(max_length=200)
@@ -102,7 +102,7 @@ class Testing (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Software (models.Model):
     name = models.CharField(max_length=200)
@@ -110,7 +110,7 @@ class Software (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Static_site_gen (models.Model):
     name = models.CharField(max_length=200)
@@ -118,7 +118,7 @@ class Static_site_gen (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Game_engine (models.Model):
     name = models.CharField(max_length=200)
@@ -126,7 +126,7 @@ class Game_engine (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Automation (models.Model):
     name = models.CharField(max_length=200)
@@ -134,7 +134,7 @@ class Automation (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Blockchain (models.Model):
     name = models.CharField(max_length=200)
@@ -142,7 +142,7 @@ class Blockchain (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Others (models.Model):
     name = models.CharField(max_length=200)
@@ -150,7 +150,7 @@ class Others (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
 
 class Personal_readme(models.Model):
     add_on = [ 
@@ -196,7 +196,6 @@ class Personal_readme(models.Model):
     twitter = models.URLField(validators = [Link_Regex], blank=True)
     codepen = models.URLField(validators = [Link_Regex], blank=True)
     dev = models.URLField(validators = [Link_Regex], blank=True)
-    codesandbox = models.URLField(validators = [Link_Regex], blank=True)
     linkedin = models.URLField(validators = [Link_Regex], blank=True)
     kaggle = models.URLField(validators = [Link_Regex], blank=True)
     facebook = models.URLField(validators = [Link_Regex], blank=True)
@@ -206,16 +205,15 @@ class Personal_readme(models.Model):
     hashnode = models.URLField(validators = [Link_Regex], blank=True)
     medium = models.URLField(validators = [Link_Regex], blank=True)
     youtube = models.URLField(validators = [Link_Regex], blank=True)
-    codechef = models.URLField(validators = [Link_Regex], blank=True)
     hackerank = models.URLField(validators = [Link_Regex], blank=True)
     leetcode = models.URLField(validators = [Link_Regex], blank=True)
     topcoder = models.URLField(validators = [Link_Regex], blank=True)
     hackerearth = models.URLField(validators = [Link_Regex], blank=True)
-    gfg = models.URLField(validators = [Link_Regex], blank=True)
     discord = models.URLField(validators = [Link_Regex], blank=True)
     rss = models.URLField(validators = [Link_Regex], blank=True)
-    add_ons = MultiSelectField(choices = add_on, blank=True, max_length=300,)
+    add_ons = MultiSelectField(choices = add_on, blank=True, max_length=500,)
     buy_me_coffee = models.URLField(validators = [Link_Regex], blank=True)
+    patreon = models.URLField(validators = [Link_Regex], blank=True)
 
     def __str__(self):
-        return format_html(f"<img class='img' src='{self.img_link}' width='50px' /><span class='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
