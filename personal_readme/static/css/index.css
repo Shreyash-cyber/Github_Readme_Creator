@@ -25,43 +25,169 @@ body{
     margin-left: 50px;
     margin-right: 50px;
 }
-input[type="text"]{
-    width: 500px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-input[type="checkbox"]{
-    height: 15px;
-    width: 15px;
-    border-radius: 4px;
-}
-input[type="url"]{
-    width: 450px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-.img{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 hr{
     height: 5px;
     color: black;
     background-color: white;
     border-radius: 3px;
 }
+input[type="checkbox"]{
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+}
+.name_tag{
+    font-size: large;
+}
+#name{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px ;
+}
+.about_tag{
+    font-size: large;
+}
+#about_me{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px ;
+}
+.work_tag{
+    font-size: large;
+}
+#resume_link{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px ;
+}
+#email_id{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px ;
+}
+#work_status{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#work_status_link{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project1_link{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px ;
+}
+#project2{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project2_link{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project3{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project3_link{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project4{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project4_link{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project5{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+#project5_link{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 10px ;
+}
+
 .hide_name{
-    display: visible;
+    display: hidden;
 }
 #programming_language{
     height: 80px;
     width: 80px;
     cursor: pointer;
-    display: inline-block;
 }
 .prog_lang{
     cursor: pointer;

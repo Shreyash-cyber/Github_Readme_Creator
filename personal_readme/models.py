@@ -162,7 +162,7 @@ class Personal_readme(models.Model):
     name = models.CharField(max_length=70, blank=False)
     about_me = models.CharField(max_length=1000, blank=True)
     resume_link = models.URLField(validators = [Link_Regex], blank=True)
-    project1 = models.CharField(max_length=1000, blank=True)
+    email_id = models.EmailField(blank=True)
     project1_link = models.URLField(validators = [Link_Regex], blank=True)
     project2 = models.CharField(max_length=1000, blank=True)
     project2_link = models.URLField(validators = [Link_Regex], blank=True)

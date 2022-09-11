@@ -37,29 +37,35 @@
   <div class="form text-white">
   <form action="" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <div>
+    <div class="name_tag">
+      <h2><i class="fa-solid fa-user"></i> ( Title )</h2>
       {{ form.name.label_tag }} <span>{{ form.name }}</span>
   </div>
-  <div>
+  <div class="about_tag">
+    <h2><i class="fa-solid fa-closed-captioning"></i> ( Subtitle )</h2>
     {{ form.about_me.label_tag }} <span>{{ form.about_me }} </span> 
   </div>
     <hr>
-    <h3>Work</h3>
+    <div class="work_tag">
+    <h2><i class="fa-solid fa-briefcase"></i> ( Work )</h2>
     {{ form.resume_link.label_tag }} <span>{{ form.resume_link}} </span>
     <br>
+     {{ form.email_id.label_tag }}<span>{{ form.email_id }}</span>
+     <br>
     {{ form.work_status.label_tag }} <span>{{ form.work_status}}</span> <span>{{ form.work_status_link}}</span>
 <br>
-    {{ form.project1}}{{ form.project1_link}}
+    {{ form.project1_link.label_tag}} <span> {{ form.project1_link}}</span>
     <br>
-    {{ form.project2}}{{ form.project2_link}}
+    {{ form.project2.label_tag}}{{ form.project2}}{{ form.project2_link}}
     <br>
-    {{ form.project3}}{{ form.project3_link}}
+    {{ form.project3.label_tag}}{{ form.project3}}{{ form.project3_link}}
     <br>
-    {{ form.project4}}{{ form.project4_link}}
+    {{ form.project4.label_tag}}{{ form.project4}}{{ form.project4_link}}
     <br>
-    {{ form.project5}}{{ form.project5_link}}
+    {{ form.project5.label_tag}}{{ form.project5}}{{ form.project5_link}}
+  </div>
     <hr>
-    <h3>Skills / Technology</h3>
+    <h2><i class="fa-solid fa-laptop"></i> ( Skills / Technology )</h2>
     <p>{{ form.system.label_tag }} 
     </p> {{ form.system}}
     <hr>
@@ -114,7 +120,7 @@
     <p>{{ form.others.label_tag }} 
     </p> {{ form.others}}
     <hr>
-    <h3>Social</h3>
+    <h2><i class="fa-solid fa-hashtag"></i> ( Social )</h2>
     {{ form.github.label_tag }} {{ form.github}}
     {{ form.twitter.label_tag }} {{ form.twitter}}
     {{ form.codepen.label_tag }} {{ form.codepen}}
@@ -135,10 +141,10 @@
     {{ form.discord.label_tag }} {{ form.discord}}
     {{ form.rss.label_tag }} {{ form.rss}}
     <hr>
-    <h3>Add On</h3>
+    <h2><i class="fa-solid fa-square-plus"></i> ( Add On )</h2>
     {{ form.add_ons}}
     <hr>
-    <h3>Support</h3>
+    <h2><i class="fa-solid fa-handshake"></i> ( Support )</h2>
     {{ form.buy_me_coffee}}
     <hr>
     <div class="genrate">
