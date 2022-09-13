@@ -6,4 +6,5 @@ app_name = 'personal_readme'
 
 urlpatterns = [
     path('',views.home,name='home'),
+    path('preview/',views.preview,name='preview'),
 ]

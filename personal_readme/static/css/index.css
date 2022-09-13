@@ -7,12 +7,13 @@
     text-decoration: none;
 }
 body{
-    background-color: #212529;
+    background-color: #414a4c;
+    max-width: 100%;
 }
 /* navbar styling */
 
 .navbar{
-    background-color: #212529;
+    background-color: #353839;
 }
 .btn{
     margin-left: 5px;
@@ -21,8 +22,7 @@ body{
  
 /* form styling */
 .form{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 50px;
 }
 hr{
     height: 5px;
@@ -187,214 +187,396 @@ input[type="checkbox"]{
     font-size: larger;
 }
 #hide_name{
-    display: none;
+    visibility: hidden;
     background-color: white;
     color: black;
     padding: 3px;
     box-sizing: content-box;
     border-radius: 2px;
-}
-#img{
-    margin: 2rem;
+    margin-left: 5px;
 }
 
-#system > div:hover #hide_name{
-    display: inline;
-}
-#system {
+div#id_system div label {
     display: flex;
-}
-#system > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#programming_language > div:hover #hide_name{
-    display: inline;
+.system > div:hover #hide_name{
+    visibility: visible;
+
 }
-#programming_language {
+.system{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#programming_language > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.system > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#frontend_language > div:hover #hide_name{
-    display: inline;
-}
-#frontend_language {
+div#id_programming_language div label {
     display: flex;
-}
-#frontend_language > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#backend_language > div:hover #hide_name{
-    display: inline;
+.programming_language > div:hover #hide_name{
+    visibility: visible;
+
 }
-#backend_language {
+.programming_language{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
+    padding-right: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
-#backend_language > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.programming_language > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#mobile_app_devlopment > div:hover #hide_name{
-    display: inline;
-}
-#mobile_app_devlopment {
+div#id_frontend_language div label {
     display: flex;
-}
-#mobile_app_devlopment > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#aI_ML > div:hover #hide_name{
-    display: inline;
+.frontend_language > div:hover #hide_name{
+    visibility: visible;
+
 }
-#aI_ML {
+.frontend_language{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#aI_ML > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.frontend_language > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#database > div:hover #hide_name{
-    display: inline;
-}
-#database {
+div#id_backend_language div label {
     display: flex;
-}
-#database > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#data_visualization > div:hover #hide_name{
-    display: inline;
+.backend_language > div:hover #hide_name{
+    visibility: visible;
+
 }
-#data_visualization {
+.backend_language{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#data_visualization > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.backend_language > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#devops > div:hover #hide_name{
-    display: inline;
-}
-#devops {
+div#id_mobile_app_devlopment div label {
     display: flex;
-}
-#devops > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#bASS > div:hover #hide_name{
-    display: inline;
+.mobile_app_devlopment > div:hover #hide_name{
+    visibility: visible;
+
 }
-#bASS {
+.mobile_app_devlopment{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#bASS > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.mobile_app_devlopment > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#framework > div:hover #hide_name{
-    display: inline;
-}
-#framework {
+div#id_aI_ML div label {
     display: flex;
-}
-#framework > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#testing > div:hover #hide_name{
-    display: inline;
+.aI_ML > div:hover #hide_name{
+    visibility: visible;
+
 }
-#testing {
+.aI_ML{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#testing > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.aI_ML > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#software > div:hover #hide_name{
-    display: inline;
-}
-#software {
+div#id_database div label {
     display: flex;
-}
-#software > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#static_site_gen > div:hover #hide_name{
-    display: inline;
+.database > div:hover #hide_name{
+    visibility: visible;
+
 }
-#static_site_gen {
+.database{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#static_site_gen > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.database > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#game_engine > div:hover #hide_name{
-    display: inline;
-}
-#game_engine {
+div#id_data_visualization div label {
     display: flex;
-}
-#game_engine > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#automation > div:hover #hide_name{
-    display: inline;
+.data_visualization > div:hover #hide_name{
+    visibility: visible;
+
 }
-#automation {
+.data_visualization{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#automation > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.data_visualization > div{
+    padding: 0;
+    margin: 50px;
+    
 }
 
-#blockchain > div:hover #hide_name{
-    display: inline;
-}
-#blockchain {
+div#id_devops div label {
     display: flex;
-}
-#blockchain > div{
-    margin-left: 20px;
-    margin-right: 20px;
+    align-items: center;
 }
 
-#others > div:hover #hide_name{
-    display: inline;
+.devops > div:hover #hide_name{
+    visibility: visible;
+
 }
-#others {
+.devops{
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
+    flex-wrap: wrap;
 }
-#others > div{
-    margin-left: 20px;
-    margin-right: 20px;
+.devops > div{
+    padding: 0;
+    margin: 50px;
+    
 }
+
+div#id_bASS div label {
+    display: flex;
+    align-items: center;
+}
+
+.bASS > div:hover #hide_name{
+    visibility: visible;
+
+}
+.bASS{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.bASS > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_framewoork div label {
+    display: flex;
+    align-items: center;
+}
+
+.framewoork > div:hover #hide_name{
+    visibility: visible;
+
+}
+.framewoork{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.framewoork > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_testing div label {
+    display: flex;
+    align-items: center;
+}
+
+.testing > div:hover #hide_name{
+    visibility: visible;
+
+}
+.testing{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.testing > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_software div label {
+    display: flex;
+    align-items: center;
+}
+
+.software > div:hover #hide_name{
+    visibility: visible;
+
+}
+.software{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.software > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_static_site_gen div label {
+    display: flex;
+    align-items: center;
+}
+
+.static_site_gen > div:hover #hide_name{
+    visibility: visible;
+
+}
+.static_site_gen{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.static_site_gen > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_game_engine div label {
+    display: flex;
+    align-items: center;
+}
+
+.game_engine > div:hover #hide_name{
+    visibility: visible;
+
+}
+.game_engine{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.game_engine > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_automation div label {
+    display: flex;
+    align-items: center;
+}
+
+.automation > div:hover #hide_name{
+    visibility: visible;
+
+}
+.automation{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.automation > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_blockchain div label {
+    display: flex;
+    align-items: center;
+}
+
+.blockchain > div:hover #hide_name{
+    visibility: visible;
+
+}
+.blockchain{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.blockchain > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
+div#id_others div label {
+    display: flex;
+    align-items: center;
+}
+
+.others > div:hover #hide_name{
+    visibility: visible;
+
+}
+.others{
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.others > div{
+    padding: 0;
+    margin: 50px;
+    
+}
+
 /* form social section */
 
 .social_tag{
@@ -621,6 +803,9 @@ input[type="checkbox"]{
     100%{
         transform: translateY(10px);
     }
+}
+footer{
+    background-color: #353839;
 }
 .foot{
     font-size: 20px;

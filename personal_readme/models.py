@@ -14,7 +14,7 @@ class SystemChoice (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px'/><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px'/><span id='hide_name' >{self.name}</span>")
 
 class Programming_language (models.Model):
     name = models.CharField(max_length=200)
@@ -22,7 +22,7 @@ class Programming_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' class='prog_lang' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' class='prog_lang' /><span id='hide_name' >{self.name}</span>")
 
 class Frontend_language (models.Model):
     name = models.CharField(max_length=200)
@@ -30,7 +30,7 @@ class Frontend_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Backend_language (models.Model):
     name = models.CharField(max_length=200)
@@ -38,7 +38,7 @@ class Backend_language (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Mobile_app_devlopment (models.Model):
     name = models.CharField(max_length=200)
@@ -46,7 +46,7 @@ class Mobile_app_devlopment (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class AI_ML (models.Model):
     name = models.CharField(max_length=200)
@@ -54,7 +54,7 @@ class AI_ML (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Database (models.Model):
     name = models.CharField(max_length=200)
@@ -62,7 +62,7 @@ class Database (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Data_visualization (models.Model):
     name = models.CharField(max_length=200)
@@ -70,7 +70,7 @@ class Data_visualization (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Devops (models.Model):
     name = models.CharField(max_length=200)
@@ -78,7 +78,7 @@ class Devops (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class BASS (models.Model):
     name = models.CharField(max_length=200)
@@ -86,7 +86,7 @@ class BASS (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Framework (models.Model):
     name = models.CharField(max_length=200)
@@ -94,7 +94,7 @@ class Framework (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Testing (models.Model):
     name = models.CharField(max_length=200)
@@ -102,7 +102,7 @@ class Testing (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Software (models.Model):
     name = models.CharField(max_length=200)
@@ -110,7 +110,7 @@ class Software (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Static_site_gen (models.Model):
     name = models.CharField(max_length=200)
@@ -118,7 +118,7 @@ class Static_site_gen (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Game_engine (models.Model):
     name = models.CharField(max_length=200)
@@ -126,7 +126,7 @@ class Game_engine (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Automation (models.Model):
     name = models.CharField(max_length=200)
@@ -134,7 +134,7 @@ class Automation (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Blockchain (models.Model):
     name = models.CharField(max_length=200)
@@ -142,7 +142,7 @@ class Blockchain (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Others (models.Model):
     name = models.CharField(max_length=200)
@@ -150,13 +150,15 @@ class Others (models.Model):
     link = models.URLField(blank=False)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return format_html(f"<img id='img' src='{self.img_link}' width='40px' /><span id='hide_name' >{self.name}</span>")
 
 class Personal_readme(models.Model):
     add_on = [ 
-        ('display visitors count badge', 'display visitors count badge'),
-        ('display top skills', 'display top skills'),
-        ('display github profile stats card','display github profile stats card')
+        ('Display visitors count badge', 'Display visitors count badge'),
+        ('Display github trophy', 'Display github trophy'),
+        ('Display top skills', 'Display top skills'),
+        ('Display github profile stats card','Display github profile stats card'),
+        ('Display github streak stats', 'Display github streak stats')
     ]
     Link_Regex = RegexValidator(regex = "((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)")
     name = models.CharField(max_length=70, blank=False)
@@ -174,25 +176,25 @@ class Personal_readme(models.Model):
     project5_link = models.URLField(validators = [Link_Regex], blank=True)
     work_status =  models.CharField(max_length=70, blank=True)
     work_status_link = models.URLField(validators = [Link_Regex], blank=True)
-    system = models.ManyToManyField(SystemChoice, blank=True)
-    programming_language = models.ManyToManyField(Programming_language, blank=True)
-    frontend_language = models.ManyToManyField(Frontend_language, blank=True)
-    backend_language = models.ManyToManyField(Backend_language, blank=True)
-    mobile_app_devlopment = models.ManyToManyField(Mobile_app_devlopment, blank=True)
-    aI_ML = models.ManyToManyField(AI_ML, blank=True)
-    database = models.ManyToManyField(Database, blank=True)
-    data_visualization = models.ManyToManyField(Data_visualization, blank=True)
-    devops = models.ManyToManyField(Devops, blank=True)
-    bASS = models.ManyToManyField(BASS, blank=True)
-    framework = models.ManyToManyField(Framework, blank=True)
-    testing = models.ManyToManyField(Testing, blank=True)
-    software = models.ManyToManyField(Software, blank=True)
-    static_site_gen = models.ManyToManyField(Static_site_gen, blank=True)
-    game_engine = models.ManyToManyField(Game_engine, blank=True)
-    automation = models.ManyToManyField(Automation, blank=True)
-    blockchain = models.ManyToManyField(Blockchain, blank=True)
-    others = models.ManyToManyField(Others, blank=True)
-    github = models.URLField(validators = [Link_Regex], blank=True)
+    system = models.ManyToManyField(SystemChoice, blank=True, related_name='system')
+    programming_language = models.ManyToManyField(Programming_language, blank=True, related_name="programming_language")
+    frontend_language = models.ManyToManyField(Frontend_language, blank=True, related_name="frontend_language")
+    backend_language = models.ManyToManyField(Backend_language, blank=True, related_name="backend_language")
+    mobile_app_devlopment = models.ManyToManyField(Mobile_app_devlopment, blank=True, related_name="mobile_app_devlopment")
+    aI_ML = models.ManyToManyField(AI_ML, blank=True, related_name="ai_ml")
+    database = models.ManyToManyField(Database, blank=True, related_name="database")
+    data_visualization = models.ManyToManyField(Data_visualization, blank=True, related_name="data_visualiztion")
+    devops = models.ManyToManyField(Devops, blank=True, related_name="devops")
+    bASS = models.ManyToManyField(BASS, blank=True, related_name="bass")
+    framework = models.ManyToManyField(Framework, blank=True, related_name="framework")
+    testing = models.ManyToManyField(Testing, blank=True, related_name="testing")
+    software = models.ManyToManyField(Software, blank=True, related_name="software")
+    static_site_gen = models.ManyToManyField(Static_site_gen, blank=True, related_name="static_site_gen")
+    game_engine = models.ManyToManyField(Game_engine, blank=True, related_name="game_engine")
+    automation = models.ManyToManyField(Automation, blank=True, related_name="automation")
+    blockchain = models.ManyToManyField(Blockchain, blank=True, related_name="blockchain")
+    others = models.ManyToManyField(Others, blank=True, related_name="others")
+    github = models.CharField(max_length=200, blank=True)
     twitter = models.URLField(validators = [Link_Regex], blank=True)
     codepen = models.URLField(validators = [Link_Regex], blank=True)
     dev = models.URLField(validators = [Link_Regex], blank=True)
@@ -216,4 +218,4 @@ class Personal_readme(models.Model):
     patreon = models.URLField(validators = [Link_Regex], blank=True)
 
     def __str__(self):
-        return format_html(f"<img id='img' src='{self.img_link}' width='50px' /><span id='hide_name' >{self.name}</span>")
+        return self.name
