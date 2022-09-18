@@ -34,6 +34,7 @@ input[type="checkbox"]{
     height: 15px;
     width: 15px;
     border-radius: 4px;
+    cursor: pointer;
 }
 /* form title section */
 .name_tag{
@@ -183,11 +184,15 @@ input[type="checkbox"]{
     margin-right: 10px ;
 }
 /* form skills/tech section */
+#img{
+    width: 40px;
+    cursor: pointer;
+}
 .skill_tag{
     font-size: larger;
 }
 #hide_name{
-    visibility: hidden;
+    display: none;
     background-color: white;
     color: black;
     padding: 3px;
@@ -202,7 +207,7 @@ div#id_system div label {
 }
 
 .system > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .system{
@@ -223,7 +228,7 @@ div#id_programming_language div label {
 }
 
 .programming_language > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .programming_language{
@@ -247,7 +252,7 @@ div#id_frontend_language div label {
 }
 
 .frontend_language > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .frontend_language{
@@ -268,7 +273,7 @@ div#id_backend_language div label {
 }
 
 .backend_language > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .backend_language{
@@ -289,7 +294,7 @@ div#id_mobile_app_devlopment div label {
 }
 
 .mobile_app_devlopment > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .mobile_app_devlopment{
@@ -310,7 +315,7 @@ div#id_aI_ML div label {
 }
 
 .aI_ML > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .aI_ML{
@@ -331,7 +336,7 @@ div#id_database div label {
 }
 
 .database > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .database{
@@ -352,7 +357,7 @@ div#id_data_visualization div label {
 }
 
 .data_visualization > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .data_visualization{
@@ -373,7 +378,7 @@ div#id_devops div label {
 }
 
 .devops > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .devops{
@@ -394,7 +399,7 @@ div#id_bASS div label {
 }
 
 .bASS > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .bASS{
@@ -415,7 +420,7 @@ div#id_framewoork div label {
 }
 
 .framewoork > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .framewoork{
@@ -436,7 +441,7 @@ div#id_testing div label {
 }
 
 .testing > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .testing{
@@ -457,7 +462,7 @@ div#id_software div label {
 }
 
 .software > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .software{
@@ -478,7 +483,7 @@ div#id_static_site_gen div label {
 }
 
 .static_site_gen > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .static_site_gen{
@@ -499,7 +504,7 @@ div#id_game_engine div label {
 }
 
 .game_engine > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .game_engine{
@@ -520,7 +525,7 @@ div#id_automation div label {
 }
 
 .automation > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .automation{
@@ -541,7 +546,7 @@ div#id_blockchain div label {
 }
 
 .blockchain > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .blockchain{
@@ -562,7 +567,7 @@ div#id_others div label {
 }
 
 .others > div:hover #hide_name{
-    visibility: visible;
+    display: inline;
 
 }
 .others{
@@ -590,6 +595,7 @@ div#id_others div label {
     margin-right:10px;
     border-radius: 5px;
     margin-left: 40px;
+    text-transform: lowercase;
 }
 #twitter{
     width: 40%;

@@ -1,12 +1,24 @@
 from typing import ClassVar
 from django import forms
 from django.forms import ModelForm, Textarea, fields, widgets
+from django.core.exceptions import ValidationError
 from .models import *
 
-class Personal_Readme_form(forms.ModelForm):
+class Personal_Readme_form(ModelForm):
     class Meta:
         model = Personal_readme
         fields = '__all__'
+
+        def clean(self):
+            cleaned_data = super().clean()
+            github = cleaned_data.get("github")
+            add_ons = cleaned_data.get("add_ons")
+
+            if len(add_ons) > 0  and add_ons!= '' and  github == '':
+                raise ValidationError(
+                    "fill in github username"
+                )
+
         labels = {
             'name':'Your Name',
             'about':'About Yourself',
@@ -18,7 +30,7 @@ class Personal_Readme_form(forms.ModelForm):
             'project2':'I am currently working on',
             'project3':'I am looking to collaborate on',
             'project4':'I am looking for help with',
-            'project5':'Any other project',
+            'project5':'My favourite project',
             'programming_language':'Programming Languages',
             'frontend_language':'Frontend Languages',
             'backend_language':'Backend Languages',
@@ -73,7 +85,7 @@ class Personal_Readme_form(forms.ModelForm):
             'project4_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project4_link'}),
             'project5': forms.TextInput(attrs={'placeholder':'  project name','id':'project5'}),
             'project5_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project5_link'}),
-            'work_status' : forms.TextInput(attrs={'placeholder':'  your current status','id':'work_status'}),
+            'work_status' : forms.TextInput(attrs={'placeholder':'  Student, Software developer, UI/UX designer,  Tester','id':'work_status'}),
             'work_status_link' : forms.TextInput(attrs={'placeholder':'  link of current working oraganization if any','id':'work_status_link'}),
             'system' : forms.CheckboxSelectMultiple(attrs={'class':'system'}),
             'programming_language' : forms.CheckboxSelectMultiple(attrs={'class':'programming_language'}),
@@ -112,7 +124,7 @@ class Personal_Readme_form(forms.ModelForm):
             'hackerearth': forms.TextInput(attrs={'placeholder':'  link of your hackerearth profile','id':'hackerearth'}),
             'discord': forms.TextInput(attrs={'placeholder':'  link of your discord profile','id':'discord'}),
             'rss': forms.TextInput(attrs={'placeholder':'  rss feed URL','id':'rss'}),
-            'add_ons':forms.CheckboxSelectMultiple(attrs={'id':'add_ons'}),
+            'add_ons' : forms.CheckboxSelectMultiple(attrs={'id': 'add_ons'}),
             'buy_me_coffee': forms.TextInput(attrs={'placeholder':'  link of your buy me coffee page','id':'buy_me_coffee'}),
             'patreon': forms.TextInput(attrs={'placeholder':'   link of your patreon page','id':'patreon'}),
         }

@@ -1,5 +1,4 @@
 {% load static %}
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,9 +42,8 @@
             Your Name
           </span>
           <span class="p-nickname vcard-username d-block" itemprop="additionalName">
-            github-username
-  
-          </span>  
+            your username
+          </span> 
         </h1>
         <div class="genrate text-center">
             <button type="submit" class="gen_btn">Edit profile</button>
@@ -60,14 +58,23 @@
         </div>     
         <div class="right">
           {% for readme in readme %}
+          <!-- for editing in title -->
           <h1 align="center">Hi 👋, I'm {{readme.name}}</h1>
-
           <hr>
+          <!--for editing in subtitle -->
           {% if readme.about_me %}
-          <h6 align="center">{{readme.about_me}}</h6>
+          <h4 align="center">{{readme.about_me}}</h4>
           {% endif %}
+          <!--for editing in work info -->
           <div align="center">
-           <h3>My Work</h3>
+           <h3>My work info ⬇️</h3>
+           {% if readme.github %}
+           {% for add_on in readme.add_ons.all %}
+          {% if add_on.title == 'Display visitors count badge' %}
+          <img align="left" src="https://komarev.com/ghpvc/?username={{readme.github}}&label=Profile%20views&color=0e75b6&style=flat" alt="{{readme.github}}" />
+          {% endif %}
+          {% endfor %}
+          {% endif %}
            {% if readme.work_status %}
            I am a <strong>{{ readme.work_status }}</strong> {% if readme.work_status_link %} in <a href="{{ readme.work_status_link }}" target="_blank">🌐 Visit the organization </a>  {% endif%}
            {% endif %} 
@@ -96,106 +103,197 @@
             How to reach me <a href="mailto: {{readme.email_id}}">@ Send an email</a>
             {% endif %}
            </div>
-
-        <h3 align="center">Skills and Tech</h3>
+           <!-- for editing in skills / tech -->
+        <h3 align="center">Skills / Tech ⬇️</h3>
         <div align="center">
         {% if readme.system %}
         {% for systems in readme.system.all %}
-        <a href="{{systems.link}}" target="_blank"><img src="{{systems.img_link}}" alt="" width="40px"></a> 
+        <a href="{{systems.link}}" target="_blank"><img src="{{systems.img_link}}" alt="{{systems.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.programming_language %}
         {% for programming_languages in readme.programming_language.all %}
-        <a href="{{programming_languages.link}}" target="_blank"><img src="{{programming_languages.img_link}}" alt="" width="40px"></a> 
+        <a href="{{programming_languages.link}}" target="_blank"><img src="{{programming_languages.img_link}}" alt="{{programming_languages.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.backend_language %}
         {% for backend_languages in readme.backend_language.all %}
-        <a href="{{backend_languages.link}}" target="_blank"><img src="{{backend_languages.img_link}}" alt="" width="40px"></a> 
+        <a href="{{backend_languages.link}}" target="_blank"><img src="{{backend_languages.img_link}}" alt="{{backend_languages.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.mobile_app_devlopment %}
         {% for mobile_app_devlopments in readme.mobile_app_devlopment.all %}
-        <a href="{{mobile_app_devlopments.link}}" target="_blank"><img src="{{mobile_app_devlopments.img_link}}" alt="" width="40px"></a> 
+        <a href="{{mobile_app_devlopments.link}}" target="_blank"><img src="{{mobile_app_devlopments.img_link}}" alt="{{mobile_app_devlopments.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.ai_ml %}
         {% for ai_mls in readme.ai_ml.all %}
-        <a href="{{ai_mls.link}}" target="_blank"><img src="{{ai_mls.img_link}}" alt="" width="40px"></a> 
+        <a href="{{ai_mls.link}}" target="_blank"><img src="{{ai_mls.img_link}}" alt="{{ai_mls.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.database %}
         {% for databases in readme.database.all %}
-        <a href="{{databases.link}}" target="_blank"><img src="{{databases.img_link}}" alt="" width="40px"></a> 
+        <a href="{{databases.link}}" target="_blank"><img src="{{databases.img_link}}" alt="{{database.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.data_visualization %}
         {% for data_visualizations in readme.data_visualization.all %}
-        <a href="{{data_visualizations.link}}" target="_blank"><img src="{{data_visualizations.img_link}}" alt="" width="40px"></a> 
+        <a href="{{data_visualizations.link}}" target="_blank"><img src="{{data_visualizations.img_link}}" alt="{{data_visualizations.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.devops %}
         {% for devopss in readme.devops.all %}
-        <a href="{{devopss.link}}" target="_blank"><img src="{{devopss.img_link}}" alt="" width="40px"></a> 
+        <a href="{{devopss.link}}" target="_blank"><img src="{{devopss.img_link}}" alt="{{devopss.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.bass %}
         {% for basss in readme.bass.all %}
-        <a href="{{basss.link}}" target="_blank"><img src="{{basss.img_link}}" alt="" width="40px"></a> 
+        <a href="{{basss.link}}" target="_blank"><img src="{{basss.img_link}}" alt="{{basss.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.framework %}
         {% for frameworks in readme.framework.all %}
-        <a href="{{frameworks.link}}" target="_blank"><img src="{{frameworks.img_link}}" alt="" width="40px"></a> 
+        <a href="{{frameworks.link}}" target="_blank"><img src="{{frameworks.img_link}}" alt="{{frameworks.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.testing %}
         {% for testings in readme.testing.all %}
-        <a href="{{testings.link}}" target="_blank"><img src="{{testings.img_link}}" alt="" width="40px"></a> 
+        <a href="{{testings.link}}" target="_blank"><img src="{{testings.img_link}}" alt="{{testings.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.software %}
         {% for softwares in readme.software.all %}
-        <a href="{{softwares.link}}" target="_blank"><img src="{{softwares.img_link}}" alt="" width="40px"></a> 
+        <a href="{{softwares.link}}" target="_blank"><img src="{{softwares.img_link}}" alt="{{softwares.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.static_site_gen %}
         {% for static_site_gens in readme.static_site_gen.all %}
-        <a href="{{static_site_gens.link}}" target="_blank"><img src="{{static_site_gens.img_link}}" alt="" width="40px"></a> 
+        <a href="{{static_site_gens.link}}" target="_blank"><img src="{{static_site_gens.img_link}}" alt="{{static_site_gens.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.game_engine %}
         {% for game_engines in readme.game_engine.all %}
-        <a href="{{game_engines.link}}" target="_blank"><img src="{{game_engines.img_link}}" alt="" width="40px"></a> 
+        <a href="{{game_engines.link}}" target="_blank"><img src="{{game_engines.img_link}}" alt="{{game_engines.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.automation %}
         {% for automations in readme.automation.all %}
-        <a href="{{automations.link}}" target="_blank"><img src="{{automations.img_link}}" alt="" width="40px"></a> 
+        <a href="{{automations.link}}" target="_blank"><img src="{{automations.img_link}}" alt="{{automations.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.blockchain %}
         {% for blockchains in readme.blockchain.all %}
-        <a href="{{blockchains.link}}" target="_blank"><img src="{{blockchains.img_link}}" alt="" width="40px"></a> 
+        <a href="{{blockchains.link}}" target="_blank"><img src="{{blockchains.img_link}}" alt="{{blockchains.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
         {% if readme.others %}
         {% for otherss in readme.others.all %}
-        <a href="{{otherss.link}}" target="_blank"><img src="{{otherss.img_link}}" alt="" width="40px"></a> 
+        <a href="{{otherss.link}}" target="_blank"><img src="{{otherss.img_link}}" alt="{{otherss.name}}" width="40px"></a> 
         {% endfor %}
         {%endif%}
       </div>
-         
-         <h3 align="left">Connect with me:</h3>
-         <p align="center">
-         <a href="https://linkedin.com/in/shreyash-mishra-591314212" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shreyash-mishra-591314212" height="30" width="40" /></a>
-         <a href="https://stackoverflow.com/users/14777930" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="14777930" height="30" width="40" /></a>
-         </p>
-         
-         
-         
-         <p align="center"><a href="https://www.buymeacoffee.com/Vicky1"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="Vicky1" /></a></p><br><br>
-         
+         <!-- for editing in social handels -->
+         <h3 align="center">Connect with my social ⬇️</h3>
+        <div align="center">
+          {% if readme.github %}
+          <a href="https://github.com/{{readme.github}}" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="github" width="40px"></a>
+          {% endif %}
+          {% if readme.twitter %}
+          <a href="{{readme.twitter}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/07/Twitter-Logo-Square.png" alt="twitter" width="40px"></a>
+          {% endif %}
+          {% if readme.codepen %}
+          <a href="{{readme.codepen}}" target="_blank"><img src="https://img.favpng.com/13/19/12/computer-icons-scalable-vector-graphics-portable-network-graphics-codepen-png-favpng-T8NcxG8PN1La2ZkBAEwXK3Niq.jpg" alt="codepen" width="40px"></a>
+          {% endif %}
+          {% if readme.dev %}
+          <a href="{{readme.dev}}" target="_blank"><img src="https://iconape.com/wp-content/png_logo_vector/dev.png" alt="DEV" width="40px"></a>
+          {% endif %}
+          {% if readme.linkedin %}
+          <a href="{{readme.linkedin}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" alt="linkedin" width="40px"></a>
+          {% endif %}
+          {% if readme.kaggle %}
+          <a href="{{readme.kaggle}}" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/kaggle-3521526-2945029.png" alt="kaggle" width="40px"></a>
+          {% endif %}
+          {% if readme.facebook %}
+          <a href="{{readme.facebook}}" target="_blank"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" alt="facebook" width="40px"></a>
+          {% endif %}
+          {% if readme.instagram %}
+          <a href="{{readme.instagram}}" target="_blank"><img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="instagram" width="40px"></a>
+          {% endif %}
+          {% if readme.dribble %}
+          <a href="{{readme.dribble}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png" alt="dribble" width="40px"></a>
+          {% endif %}
+          {% if readme.behance %}
+          <a href="{{readme.behance}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/behance-1-logo-png-transparent.png" alt="behance" width="40px"></a>
+          {% endif %}
+          {% if readme.hashnode %}
+          <a href="{{readme.hashnode}}" target="_blank"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1611902473383/CDyAuTy75.png?auto=compress" alt="hashnode" width="40px"></a>
+          {% endif %}
+          {% if readme.medium %}
+          <a href="{{readme.medium}}" target="_blank"><img src="https://brandslogos.com/wp-content/uploads/images/large/medium-logo.png" alt="medium" width="40px"></a>
+          {% endif %}
+          {% if readme.youtube %}
+          <a href="{{readme.youtube}}" target="_blank"><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c545.png" alt="youtube" width="40px"></a>
+          {% endif %}
+          {% if readme.hackerank %}
+          <a href="{{readme.hackerank}}" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/hackerrank_logo_icon_145206.png" alt="hackerrank" width="40px"></a>
+          {% endif %}
+          {% if readme.topcoder %}
+          <a href="{{readme.topcoder}}" target="_blank"><img src="https://image4.owler.com/logo/topcoder_owler_20200130_161541_original.png" alt="topcoder" width="40px"></a>
+          {% endif %}
+          {% if readme.leetcode %}
+          <a href="{{readme.leetcode}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="leetcode" width="40px"></a>
+          {% endif %}
+          {% if readme.hackerearth %}
+          <a href="{{readme.hackerearth}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/800px-HackerEarth_logo.png" alt="hackerearth" width="40px"></a>
+          {% endif %}
+          {% if readme.discord %}
+          <a href="{{readme.discord}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Square-1024x1024.png" alt="discord" width="40px"></a>
+          {% endif %}
+          {% if readme.rss %}
+          <a href="{{readme.rss}}" target="_blank"><img src="https://cdn.pixabay.com/photo/2012/04/15/22/00/rss-35468_640.png" alt="rss" width="40px"></a>
+          {% endif %}
+        </div>
+        <!-- for editing in github info -->
+        <h3 align="center">My github info ⬇️</h3>
+        <div align="center">
+          {% if readme.github %}
+          {% for add_on in readme.add_ons.all %}
+          {% if add_on.title == 'Display github profile stats card' %}
+          <img src="https://github-readme-stats.vercel.app/api?username={{readme.github}}&show_icons=true&locale=en" alt="{{readme.github}}" width="40%" />
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% if readme.github %}
+          {% for add_on in readme.add_ons.all %}
+          {% if add_on.title == 'Display github streak stats' %}
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user={{readme.github}}&" alt="{{readme.github}}" width="40%" />
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% if readme.github %}
+          {% for add_on in readme.add_ons.all %}
+          {% if add_on.title == 'Display top skills' %}
+          <img src="https://github-readme-stats.vercel.app/api/top-langs?username={{readme.github}}&show_icons=true&locale=en&layout=compact" alt="{{readme.github}}" width="40%" />
+          {% endif %} 
+          {% endfor %}
+          {% endif %}
+          {% if readme.github %}
+          {% for add_on in readme.add_ons.all %}
+          {% if add_on.title == 'Display github trophy' %}
+          <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username={{readme.github}}" alt="{{readme.github}}" width="50%"  /></a>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+        </div>
+         <div align="center">
+          <h3>Support me ⬇️</h3>
+          {% if readme.buy_me_coffee %}
+         <a href="{{readme.buy_me_coffee}}"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="" /></a>
+         {% endif %}
+         {% if readme.patreon %}
+         <a href="{{readme.patreon}}"> <img src="https://s302.podbean.com/pb/e762bedeb224ff522e7c58443ffc864e/6326c807/data1/fs71/4716769/uploads/become_a_supporter-button.png" height="50" width="210" alt="" /></a>
+         {% endif %}
+        </div>
       {% endfor %}
         </div>
     </div>

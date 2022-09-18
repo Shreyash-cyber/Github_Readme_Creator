@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'multiselectfield',
     'personal_readme',
 ]
@@ -129,8 +128,6 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = STATIC_CDN
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
