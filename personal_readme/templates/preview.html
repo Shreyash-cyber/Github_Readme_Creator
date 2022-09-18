@@ -13,7 +13,8 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="{% static 'css/preview.css'%}">
-
+    <!-- js -->
+    <script src="{% static 'js/preview.js'%}"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -55,8 +56,11 @@
                 <img src="{% static 'images/pull-shark-default.png' %}" alt="" width="70px">
                 <p>     <span>   Beta   </span>       send feedback</p>
             </div>
-        </div>     
+        </div>  
         <div class="right">
+          <p align="right"><button type="button" class="btn btn-dark"><iconify-icon icon="ri:file-download-line"></iconify-icon> Download code</button>
+          <button type="button" class="btn btn-dark"   onclick="copyEvent();" id="copy_btn"><iconify-icon icon="akar-icons:copy"></iconify-icon> Copy code</button></p>
+          <div id="copy">
           {% for readme in readme %}
           <!-- for editing in title -->
           <h1 align="center">Hi 👋, I'm {{readme.name}}</h1>
@@ -67,7 +71,7 @@
           {% endif %}
           <!--for editing in work info -->
           <div align="center">
-           <h3>My work info ⬇️</h3>
+           <h3>My Work Info</h3>
            {% if readme.github %}
            {% for add_on in readme.add_ons.all %}
           {% if add_on.title == 'Display visitors count badge' %}
@@ -75,36 +79,31 @@
           {% endif %}
           {% endfor %}
           {% endif %}
+          <p>
            {% if readme.work_status %}
-           I am a <strong>{{ readme.work_status }}</strong> {% if readme.work_status_link %} in <a href="{{ readme.work_status_link }}" target="_blank">🌐 Visit the organization </a>  {% endif%}
-           {% endif %} 
-           <br>
+           I am a <strong> {{ readme.work_status }} </strong> {% if readme.work_status_link %} in <a href="{{ readme.work_status_link }}" target="_blank"> 🌐Visit the organization </a>  {% endif%}
+           {% endif %} <br>
            {% if readme.project2 %}
-           I am a currently working on <strong>{{ readme.project2 }}</strong> {% if readme.project2_link %}<a href="{{ readme.project2_link }}" target="_blank">🌐Visit </a>  {% endif%}
-           {% endif %} 
-           <br>
+           I am a currently working on <strong> {{ readme.project2 }} </strong>  {% if readme.project2_link %}  <a href="{{ readme.project2_link }}" target="_blank"> 🌐Visit </a>  {% endif%}
+           {% endif %} <br>
            {% if readme.project3 %}
-           I am a looking to collaborate on <strong> {{ readme.project3 }} </strong> {% if readme.project3_link %}<a href="{{ readme.project3_link }}" target="_blank"> 🌐Visit</a>  {% endif%}
-           {% endif %} 
-           <br>
+           I am a looking to collaborate on  <strong> {{ readme.project3 }} </strong> {% if readme.project3_link %}  <a href="{{ readme.project3_link }}" target="_blank"> 🌐Visit</a> {% endif%}
+           {% endif %} <br>
            {% if readme.project4 %}
-           I am a looking for help with <strong>{{ readme.project4 }}</strong> {% if readme.project4_link %}<a href="{{ readme.project4_link }}" target="_blank">🌐Visit</a>  {% endif%}
-           {% endif %} 
-           <br>
+           I am a looking for help with  <strong> {{ readme.project4 }} </strong> {% if readme.project4_link %}  <a href="{{ readme.project4_link }}" target="_blank"> 🌐Visit</a> {% endif%}
+           {% endif %} <br>
            {% if readme.project5 %}
-           My favourite project is <strong>{{ readme.project5 }}</strong> {% if readme.project5_link %}<a href="{{ readme.project5_link }}" target="_blank">🌐Visit</a>  {% endif%}
-           {% endif %}
-           <br>
+           My favourite project is  <strong> {{ readme.project5 }} </strong> {% if readme.project5_link %}  <a href="{{ readme.project5_link }}" target="_blank"> 🌐Visit</a> {% endif%}
+           {% endif %} <br>
            {% if readme.resume_link %}
            <a href="{{readme.resume_link}}" target="_blank"><img src="http://www.rachelmaclean.com/wp-content/uploads/2016/06/download-cv-button.png" alt="" width="200px"></a>
-           {%endif%}
-           <br>
+           {%endif%} <br>
             {% if readme.email_id %}
-            How to reach me <a href="mailto: {{readme.email_id}}">@ Send an email</a>
-            {% endif %}
+            How to reach me <a href="mailto: {{readme.email_id}}"> @ Send an email</a>
+            {% endif %} </p>
            </div>
            <!-- for editing in skills / tech -->
-        <h3 align="center">Skills / Tech ⬇️</h3>
+        <h3 align="center">Skills / Tech </h3>
         <div align="center">
         {% if readme.system %}
         {% for systems in readme.system.all %}
@@ -193,68 +192,68 @@
         {%endif%}
       </div>
          <!-- for editing in social handels -->
-         <h3 align="center">Connect with my social ⬇️</h3>
+         <h3 align="center">Connect With My Social</h3>
         <div align="center">
           {% if readme.github %}
-          <a href="https://github.com/{{readme.github}}" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="github" width="40px"></a>
+          <a href="https://github.com/{{readme.github}}" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" alt="github" width="40px" a;></a>
           {% endif %}
           {% if readme.twitter %}
-          <a href="{{readme.twitter}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/07/Twitter-Logo-Square.png" alt="twitter" width="40px"></a>
+          <a href="{{readme.twitter}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/07/Twitter-Logo-Square.png" alt="twitter" width="40px" a;></a>
           {% endif %}
           {% if readme.codepen %}
-          <a href="{{readme.codepen}}" target="_blank"><img src="https://img.favpng.com/13/19/12/computer-icons-scalable-vector-graphics-portable-network-graphics-codepen-png-favpng-T8NcxG8PN1La2ZkBAEwXK3Niq.jpg" alt="codepen" width="40px"></a>
+          <a href="{{readme.codepen}}" target="_blank"><img src="https://img.favpng.com/13/19/12/computer-icons-scalable-vector-graphics-portable-network-graphics-codepen-png-favpng-T8NcxG8PN1La2ZkBAEwXK3Niq.jpg" alt="codepen" width="40px" a;></a>
           {% endif %}
           {% if readme.dev %}
-          <a href="{{readme.dev}}" target="_blank"><img src="https://iconape.com/wp-content/png_logo_vector/dev.png" alt="DEV" width="40px"></a>
+          <a href="{{readme.dev}}" target="_blank"><img src="https://iconape.com/wp-content/png_logo_vector/dev.png" alt="DEV" width="40px" a;></a>
           {% endif %}
           {% if readme.linkedin %}
-          <a href="{{readme.linkedin}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" alt="linkedin" width="40px"></a>
+          <a href="{{readme.linkedin}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" alt="linkedin" width="40px" a;></a>
           {% endif %}
           {% if readme.kaggle %}
-          <a href="{{readme.kaggle}}" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/kaggle-3521526-2945029.png" alt="kaggle" width="40px"></a>
+          <a href="{{readme.kaggle}}" target="_blank"><img src="https://cdn.iconscout.com/icon/free/png-256/kaggle-3521526-2945029.png" alt="kaggle" width="40px" a;></a>
           {% endif %}
           {% if readme.facebook %}
-          <a href="{{readme.facebook}}" target="_blank"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" alt="facebook" width="40px"></a>
+          <a href="{{readme.facebook}}" target="_blank"><img src="https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png" alt="facebook" width="40px" a;></a>
           {% endif %}
           {% if readme.instagram %}
-          <a href="{{readme.instagram}}" target="_blank"><img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="instagram" width="40px"></a>
+          <a href="{{readme.instagram}}" target="_blank"><img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" alt="instagram" width="40px" a;></a>
           {% endif %}
           {% if readme.dribble %}
-          <a href="{{readme.dribble}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png" alt="dribble" width="40px"></a>
+          <a href="{{readme.dribble}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/dribbble-icon-1-logo-png-transparent.png" alt="dribble" width="40px" a;></a>
           {% endif %}
           {% if readme.behance %}
-          <a href="{{readme.behance}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/behance-1-logo-png-transparent.png" alt="behance" width="40px"></a>
+          <a href="{{readme.behance}}" target="_blank"><img src="https://cdn.freebiesupply.com/logos/large/2x/behance-1-logo-png-transparent.png" alt="behance" width="40px" a;></a>
           {% endif %}
           {% if readme.hashnode %}
-          <a href="{{readme.hashnode}}" target="_blank"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1611902473383/CDyAuTy75.png?auto=compress" alt="hashnode" width="40px"></a>
+          <a href="{{readme.hashnode}}" target="_blank"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1611902473383/CDyAuTy75.png?auto=compress" alt="hashnode" width="40px" a;></a>
           {% endif %}
           {% if readme.medium %}
-          <a href="{{readme.medium}}" target="_blank"><img src="https://brandslogos.com/wp-content/uploads/images/large/medium-logo.png" alt="medium" width="40px"></a>
+          <a href="{{readme.medium}}" target="_blank"><img src="https://brandslogos.com/wp-content/uploads/images/large/medium-logo.png" alt="medium" width="40px" a;></a>
           {% endif %}
           {% if readme.youtube %}
-          <a href="{{readme.youtube}}" target="_blank"><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c545.png" alt="youtube" width="40px"></a>
+          <a href="{{readme.youtube}}" target="_blank"><img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c545.png" alt="youtube" width="40px" a;></a>
           {% endif %}
           {% if readme.hackerank %}
-          <a href="{{readme.hackerank}}" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/hackerrank_logo_icon_145206.png" alt="hackerrank" width="40px"></a>
+          <a href="{{readme.hackerank}}" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/hackerrank_logo_icon_145206.png" alt="hackerrank" width="40px" a;></a>
           {% endif %}
           {% if readme.topcoder %}
-          <a href="{{readme.topcoder}}" target="_blank"><img src="https://image4.owler.com/logo/topcoder_owler_20200130_161541_original.png" alt="topcoder" width="40px"></a>
+          <a href="{{readme.topcoder}}" target="_blank"><img src="https://image4.owler.com/logo/topcoder_owler_20200130_161541_original.png" alt="topcoder" width="40px" a;></a>
           {% endif %}
           {% if readme.leetcode %}
-          <a href="{{readme.leetcode}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="leetcode" width="40px"></a>
+          <a href="{{readme.leetcode}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="leetcode" width="40px" a;></a>
           {% endif %}
           {% if readme.hackerearth %}
-          <a href="{{readme.hackerearth}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/800px-HackerEarth_logo.png" alt="hackerearth" width="40px"></a>
+          <a href="{{readme.hackerearth}}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HackerEarth_logo.png/800px-HackerEarth_logo.png" alt="hackerearth" width="40px" a;></a>
           {% endif %}
           {% if readme.discord %}
-          <a href="{{readme.discord}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Square-1024x1024.png" alt="discord" width="40px"></a>
+          <a href="{{readme.discord}}" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2021/05/Discord-Logo-Square-1024x1024.png" alt="discord" width="40px" a;></a>
           {% endif %}
           {% if readme.rss %}
-          <a href="{{readme.rss}}" target="_blank"><img src="https://cdn.pixabay.com/photo/2012/04/15/22/00/rss-35468_640.png" alt="rss" width="40px"></a>
+          <a href="{{readme.rss}}" target="_blank"><img src="https://cdn.pixabay.com/photo/2012/04/15/22/00/rss-35468_640.png" alt="rss" width="40px" a;></a>
           {% endif %}
         </div>
         <!-- for editing in github info -->
-        <h3 align="center">My github info ⬇️</h3>
+        <h3 align="center">My Github Info </h3>
         <div align="center">
           {% if readme.github %}
           {% for add_on in readme.add_ons.all %}
@@ -286,7 +285,7 @@
           {% endif %}
         </div>
          <div align="center">
-          <h3>Support me ⬇️</h3>
+          <h3>Support Me</h3>
           {% if readme.buy_me_coffee %}
          <a href="{{readme.buy_me_coffee}}"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="" /></a>
          {% endif %}
@@ -296,6 +295,7 @@
         </div>
       {% endfor %}
         </div>
+      </div>
     </div>
 
   <!-- footer -->
@@ -333,6 +333,7 @@
         </div>
     </div>
 </footer>
+<!-- script -->
      <!-- JavaScript Bundle with Popper -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" 
      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
