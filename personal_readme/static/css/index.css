@@ -10,6 +10,9 @@ body{
     background-color: #414a4c;
     max-width: 100%;
 }
+a{
+    color: #B1D4E0;
+  }
 /* navbar styling */
 
 .navbar{

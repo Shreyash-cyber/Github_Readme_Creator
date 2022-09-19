@@ -11,7 +11,20 @@ function copyEvent() {
   
   elem = elem.replace(/\n/g, "")
   .replace(/[\t ]+\</g, "<")
-  .replace(/\>[\t ]+$/g, ">")
+  .replace( /(<([hr]+)>)/ig, '')
   
   copyToClipboard(elem);
 }
+const addClickHandlers = (ids) => {
+  ids.forEach(({ id, icon, text }) => {
+    const element = document.getElementById(id);
+    element.addEventListener("click", function handleClick() {
+      element.innerHTML = `<iconify-icon icon="${icon}"></iconify-icon> ${text}`;
+    });
+  });
+};
+
+addClickHandlers([
+  { id: "copy_btn", icon: "akar-icons:copy", text: "Code Copied" },
+  { id: "down_btn", icon: "ri:file-download-line", text: "Downloading" },
+]);
