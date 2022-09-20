@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.http import Http404, HttpResponse
+from django.conf import settings
+from django.shortcuts import redirect
 from .forms import *
 from .models import *
 # Create your views here.
@@ -14,6 +15,12 @@ def home(request):
         form = Personal_Readme_form()
     return render(request, 'home.html', {'form': form})
 
+def about(request):
+    return render(request, 'about.html')
+
+def faq(request):
+    return render(request, 'faq.html')
+
 def get_referer(request):
     referer = request.META.get('HTTP_REFERER')
     if not referer:
@@ -22,6 +29,6 @@ def get_referer(request):
 
 def preview(request):
     if not get_referer(request):
-        raise Http404
+        return render(request, 'http404.html')
     readme = [Personal_readme.objects.latest('create_date')]
     return render(request, 'preview.html',{'readme':readme})
