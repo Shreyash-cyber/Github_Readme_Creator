@@ -21,6 +21,9 @@ def about(request):
 def faq(request):
     return render(request, 'faq.html')
 
+def addon(request):
+    return render(request, 'add_on.html')
+
 def get_referer(request):
     referer = request.META.get('HTTP_REFERER')
     if not referer:
