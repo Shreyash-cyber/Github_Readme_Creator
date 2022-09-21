@@ -21,7 +21,7 @@ def about(request):
 def faq(request):
     return render(request, 'faq.html')
 
-def addon(request):
+def project(request):
     return render(request, 'add_on.html')
 
 def get_referer(request):

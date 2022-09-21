@@ -18,7 +18,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'personal_readme:home' %}">
         <img src="{% static 'images/android-chrome-512x512.png' %}" alt="" width="56" height="56" class="align-text-center">
         <strong>Github Readme Creator </strong>
       </a>
@@ -81,7 +81,8 @@
                 <h5 class="text-white mb-3">Pages</h5>
                 <ul class="list-unstyled text-muted">
                     <li><a href="#">About</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="{% url 'personal_readme:project' %}">Projects</a></li>
+                    <li><a href="{% url 'personal_readme:faq' %}">FAQ</a></li>
                     <li><a href="#">Liscence</a></li>
                 </ul>
             </div>

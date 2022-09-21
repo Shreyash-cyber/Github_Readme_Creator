@@ -9,5 +9,5 @@ urlpatterns = [
     path('preview/',views.preview,name='preview'),
     path('about/',views.about,name='about'),
     path('faq/',views.faq,name='faq'),
-    path('addon/',views.addon,name='addon'),
+    path('projects/',views.project,name='project'),
 ]
