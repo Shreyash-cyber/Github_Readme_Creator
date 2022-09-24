@@ -33,6 +33,7 @@ a{
 .left{
     margin-left: 25px;
     margin-right: 25px;
+    width: 20%;
 }
 .default{
     width:256px;
@@ -113,12 +114,21 @@ h1{
     border-radius: 8px; 
     margin: 5px; 
   }
+  .sup{
+    margin-left: 30px;
+  }
+  .sup > p{
+    font-size: 20px;
+  }
+  .sup > #hr {
+    width: 20px;
+  }
   /* right side */
   .right{
     margin-left: 40px;
     margin-right: 20px;
     min-height: 600px;
-    width: 1000px;
+    width: 70%;
     border: 2px solid white;
     padding: 5px;
     border-radius: 4px;

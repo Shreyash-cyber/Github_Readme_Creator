@@ -9,12 +9,32 @@ function copyToClipboard(text) {
 function copyEvent() {
   var elem = document.getElementById("copy").innerHTML;
   
-  elem = elem.replace(/\n/g, "")
-  .replace(/[\t ]+\</g, "<")
+  elem = elem
+  .replace(/\n/g, "")
   .replace( /(<([hr]+)>)/ig, '')
   
   copyToClipboard(elem);
 }
+function downEvent() {
+  var elem = document.getElementById("copy").innerHTML;
+
+  elem = elem
+  .replace(/\n/g, "")
+  .replace( /(<([hr]+)>)/ig, '')
+
+  var file = new File(["\ufeff"+elem], 'README.md', {type: "text/plain:charset=UTF-8"});
+
+  url = window.URL.createObjectURL(file);
+
+  //create a hidden link and set the href and click it
+  var a = document.createElement("a");
+  a.style = "display: none";
+  a.href = url;
+  a.download = file.name;
+  a.click();
+  window.URL.revokeObjectURL(url);
+}
+
 const addClickHandlers = (ids) => {
   ids.forEach(({ id, icon, text }) => {
     const element = document.getElementById(id);
