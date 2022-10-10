@@ -18,8 +18,18 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from django.urls import re_path as url 
 
+from django.views.static import serve
+
+
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('personal_readme.urls')),
     url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+
