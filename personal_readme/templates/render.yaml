@@ -1,6 +1,0 @@
-services: 
-- type: web
-  name: Github_Readme_Creator
-  env: python
-  buildCommand: "./build.sh"        # ensure it's a string
-  startCommand: cd Github_Readme_Creator && gunicorn Github_Readme_Creator.wsgi:application
