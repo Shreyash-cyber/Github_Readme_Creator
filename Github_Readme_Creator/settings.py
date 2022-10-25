@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'multiselectfield',
     'personal_readme',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
