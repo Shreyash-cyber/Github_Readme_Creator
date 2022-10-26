@@ -422,7 +422,6 @@ div#id_framework div label {
     display: flex;
     align-items: center;
 }
-
 .framework > div:hover #hide_name{
     display: inline;
 
