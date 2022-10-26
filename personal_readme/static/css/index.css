@@ -189,6 +189,7 @@ input[type="checkbox"]{
 /* form skills/tech section */
 #img{
     width: 40px;
+    max-height: 45px; 
     cursor: pointer;
 }
 .skill_tag{
@@ -417,22 +418,22 @@ div#id_bASS div label {
     
 }
 
-div#id_framewoork div label {
+div#id_framework div label {
     display: flex;
     align-items: center;
 }
 
-.framewoork > div:hover #hide_name{
+.framework > div:hover #hide_name{
     display: inline;
 
 }
-.framewoork{
+.framework{
     margin-left: 10px;
     margin-right: 10px;
     display: flex;
     flex-wrap: wrap;
 }
-.framewoork > div{
+.framework > div{
     padding: 0;
     margin: 50px;
     
