@@ -3,10 +3,7 @@ from django.conf import settings
 from django.shortcuts import redirect
 from .forms import *
 from .models import *
-from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
-
-@csrf_exempt
 def home(request):
     if request.method == 'POST':
         form = Personal_Readme_form(request.POST)

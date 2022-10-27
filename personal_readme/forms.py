@@ -1,3 +1,4 @@
+from importlib.abc import ExecutionLoader
 from typing import ClassVar
 from django import forms
 from django.forms import ModelForm, Textarea, fields, widgets
@@ -8,20 +9,11 @@ class Personal_Readme_form(ModelForm):
     class Meta:
         model = Personal_readme
         fields = '__all__'
-
-        def clean(self):
-            cleaned_data = super().clean()
-            github = cleaned_data.get("github")
-            add_ons = cleaned_data.get("add_ons")
-
-            if len(add_ons) > 0  and add_ons!= '' and  github == '':
-                raise ValidationError(
-                    "fill in github username"
-                )
+        exclude = ['create_date']
 
         labels = {
             'name':'Your Name',
-            'about':'About Yourself',
+            'about_me':'About Yourself',
             'work_status':'Your Current work status',
             'resume_link':'Your Resume',
             'work_status':'Your current status',
@@ -78,13 +70,13 @@ class Personal_Readme_form(ModelForm):
             'email_id': forms.EmailInput(attrs={'placeholder':'  your email id','id':'email_id'}),
             'project1_link': forms.TextInput(attrs={'placeholder':'  link of your portfolio/website','id':'project1_link'}),
             'project2': forms.TextInput(attrs={'placeholder':'  project name','id':'project2'}),
-            'project2_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project2_link'}),
+            'project2_link': forms.TextInput(attrs={'placeholder':'  link of project/github repo','id':'project2_link'}),
             'project3': forms.TextInput(attrs={'placeholder':'  project name','id':'project3'}),
-            'project3_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project3_link'}),
+            'project3_link': forms.TextInput(attrs={'placeholder':'  link of project/github repo','id':'project3_link'}),
             'project4': forms.TextInput(attrs={'placeholder':'  project name','id':'project4'}),
-            'project4_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project4_link'}),
+            'project4_link': forms.TextInput(attrs={'placeholder':'  link of project/github repo','id':'project4_link'}),
             'project5': forms.TextInput(attrs={'placeholder':'  project name','id':'project5'}),
-            'project5_link': forms.TextInput(attrs={'placeholder':'  link of your project/github repo','id':'project5_link'}),
+            'project5_link': forms.TextInput(attrs={'placeholder':'  link of project/github repo','id':'project5_link'}),
             'work_status' : forms.TextInput(attrs={'placeholder':'  Student, Software developer, UI/UX designer,  Tester','id':'work_status'}),
             'work_status_link' : forms.TextInput(attrs={'placeholder':'  link of current working oraganization if any','id':'work_status_link'}),
             'system' : forms.CheckboxSelectMultiple(attrs={'class':'system'}),

@@ -79,36 +79,39 @@
 {% endif %}
 <!--for editing in work info -->
 <div align="center">
+  {% if readme.github %}
+  {% for add_on in readme.add_ons.all %}
+  {% if add_on.title == 'Display visitors count badge' %}
+  <img align="left" src="https://komarev.com/ghpvc/?username={{readme.github}}&label=Profile%20views&color=0e75b6&style=flat" alt="{{readme.github}}" />
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% if readme.project1_link %}
+  <a href="{{ readme.project1_link }}"><img align="right" src="https://i.postimg.cc/ryrLd06b/portfolio-image.png" alt="Visit Portfolio" height="28px" /></a>
+  {% endif %}
 <h3>My Work Info :</h3>
-{% if readme.github %}
-{% for add_on in readme.add_ons.all %}
-{% if add_on.title == 'Display visitors count badge' %}
-<img align="left" src="https://komarev.com/ghpvc/?username={{readme.github}}&label=Profile%20views&color=0e75b6&style=flat" alt="{{readme.github}}" />
-{% endif %}
-{% endfor %}
-{% endif %}
 <p>
 {% if readme.work_status %}
 I am a <strong> {{ readme.work_status }} </strong> {% if readme.work_status_link %} in <a href="{{ readme.work_status_link }}" target="_blank"> 🌐Visit the organization </a>  {% endif%}
 {% endif %} <br>
 {% if readme.project2 %}
 I am a currently working on <strong> {{ readme.project2 }} </strong>  {% if readme.project2_link %}  <a href="{{ readme.project2_link }}" target="_blank"> 🌐Visit </a>  {% endif%}
-{% endif %} <br>
+ <br> {% endif %}
 {% if readme.project3 %}
 I am a looking to collaborate on  <strong> {{ readme.project3 }} </strong> {% if readme.project3_link %}  <a href="{{ readme.project3_link }}" target="_blank"> 🌐Visit</a> {% endif%}
-{% endif %} <br>
+ <br> {% endif %}
 {% if readme.project4 %}
 I am a looking for help with  <strong> {{ readme.project4 }} </strong> {% if readme.project4_link %}  <a href="{{ readme.project4_link }}" target="_blank"> 🌐Visit</a> {% endif%}
-{% endif %} <br>
+ <br> {% endif %}
 {% if readme.project5 %}
 My favourite project is  <strong> {{ readme.project5 }} </strong> {% if readme.project5_link %}  <a href="{{ readme.project5_link }}" target="_blank"> 🌐Visit</a> {% endif%}
-{% endif %} <br>
+ <br> {% endif %}
 {% if readme.resume_link %}
-<a href="{{readme.resume_link}}" target="_blank"><img src="https://i.postimg.cc/7PVnFtsZ/download-cv-button.png" alt="" width="200px"></a>
-{%endif%} <br>
+<a href="{{readme.resume_link}}" target="_blank"><img src="https://i.postimg.cc/7PVnFtsZ/download-cv-button.png" alt="" width="200px"></a> <br> 
+<br> {% endif%}
 {% if readme.email_id %}
 How to reach me <a href="mailto: {{readme.email_id}}"> @ Send an email</a>
-{% endif %} </p>
+<br> {% endif %} </p>
  </div>
  <!-- for editing in skills / tech -->
 <h3 align="center">Skills / Tech :</h3>
