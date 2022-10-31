@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = ['https://*.githubreadmecreator-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://*.githubreadmecreator.up.railway.app/']
 # Application definition
 
 INSTALLED_APPS = [
