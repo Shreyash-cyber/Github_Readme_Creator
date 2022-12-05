@@ -120,3 +120,4 @@ class Personal_Readme_form(ModelForm):
             'buy_me_coffee': forms.TextInput(attrs={'placeholder':'  link of your buy me coffee page','id':'buy_me_coffee'}),
             'patreon': forms.TextInput(attrs={'placeholder':'   link of your patreon page','id':'patreon'}),
         }
+        
